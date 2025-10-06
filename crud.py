@@ -54,6 +54,7 @@ def atualizar_idade(id_alunos, nova_idade):
                 "UPDATE alunos SET idade = %s WHERE id = %s",
                 (nova_idade, id_alunos)
             )
+            conexao.commit()
         except Exception as erro:
             print(f"erro ao atualizar idade: {erro}")
         finally:
@@ -75,6 +76,8 @@ def deletar_aluno(id_aluno):
         finally:
             cursor.close()
             conexao.close()
+
+    
 
 
 
